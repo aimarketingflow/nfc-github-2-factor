@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFC GitHub 2FA Guide | AIMF LLC</title>
+    <style>
+        @page { size: letter; margin: 0.5in; }
+        @media print {
+            .page-break { page-break-after: always; }
+            body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+            line-height: 1.6;
+            color: #1a1a2e;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .page { min-height: 10in; padding: 0.5in 0; }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+        .aimf-logo {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+        }
+        h1 { color: #1a1a2e; font-size: 32px; margin-bottom: 10px; }
+        h2 { color: #667eea; font-size: 24px; margin: 30px 0 15px 0; border-bottom: 2px solid #e5e7eb; padding-bottom: 8px; }
+        h3 { color: #374151; font-size: 18px; margin: 20px 0 10px 0; }
+        .terminal {
+            background: #1a1a2e;
+            color: #0fff50;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            margin: 15px 0;
+            font-size: 12px;
+        }
+        .terminal .prompt { color: #ffd700; }
+        .terminal .command { color: #0fff50; }
+        .terminal .output { color: #a8b2d1; }
+        .warning-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .success-box {
+            background: #d1fae5;
+            border-left: 4px solid #10b981;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .step-number {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background: #667eea;
+            color: white;
+            text-align: center;
+            line-height: 28px;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e5e7eb;
+            text-align: center;
+            color: #6b7280;
+            font-size: 12px;
+        }
+        .code-inline {
+            background: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+            color: #6366f1;
+        }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { padding: 10px; border: 1px solid #e5e7eb; }
+        th { background: #f3f4f6; font-weight: 600; }
+    </style>
+</head>
+<body>
+    <!-- Page 1: Overview -->
+    <div class="page">
+        <div class="header">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div class="aimf-logo">AI</div>
+                <div>
+                    <div style="font-size: 18px; font-weight: bold; color: #667eea;">AIMF LLC</div>
+                    <div style="font-size: 12px; color: #6b7280;">Advanced Security Solutions</div>
+                </div>
+            </div>
+            <div style="text-align: right;">
+                <div style="font-size: 14px; color: #6b7280;">Version 2.0</div>
+                <div style="font-size: 12px; color: #9ca3af;">© 2024 AIMF LLC</div>
+            </div>
+        </div>
+        
+        <h1>🔐 NFC GitHub 2FA</h1>
+        <p style="font-size: 16px; color: #6b7280;">Ultra-Secure SSH Authentication Using Physical NFC Tags</p>
+        
+        <h2>Executive Summary</h2>
+        <p>The NFC GitHub 2FA system provides unprecedented security for SSH authentication by requiring physical possession of an NFC tag, eliminating remote attack vectors while maintaining complete invisibility of credentials.</p>
+        
+        <h2>Security Architecture</h2>
+        <table>
+            <tr><th>Protected Against</th><th>Security Measure</th></tr>
+            <tr><td>Remote Attacks</td><td>Physical tag required</td></tr>
+            <tr><td>Keyloggers</td><td>No keyboard input</td></tr>
+            <tr><td>Screen Capture</td><td>NFC value never displayed</td></tr>
+            <tr><td>Credential Theft</td><td>Passphrase on physical tag only</td></tr>
+        </table>
+        
+        <h2>System Requirements</h2>
+        <ul>
+            <li>NFC Reader (ACR122U or compatible)</li>
+            <li>Blank NFC Tags (NTAG213/215/216)</li>
+            <li>Python 3.x, OpenSSH, Git</li>
+            <li>Linux, macOS, or Raspberry Pi</li>
+        </ul>
+        
+        <div class="footer"><strong>AIMF LLC</strong> | Page 1</div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <!-- Page 2: Installation -->
+    <div class="page">
+        <div class="header">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div class="aimf-logo">AI</div>
+                <div style="font-size: 18px; font-weight: bold; color: #667eea;">AIMF LLC</div>
+            </div>
+        </div>
+        
+        <h2>Installation Guide</h2>
+        
+        <h3><span class="step-number">1</span>Linux Installation</h3>
+        <div class="terminal">
+<span class="prompt">$</span> <span class="command">sudo apt-get update</span>
+<span class="prompt">$</span> <span class="command">sudo apt-get install -y python3 git openssh-client</span>
+<span class="prompt">$</span> <span class="command">sudo apt-get install -y libnfc-bin libnfc-dev pcscd pcsc-tools</span>
+<span class="prompt">$</span> <span class="command">sudo systemctl enable --now pcscd</span>
+        </div>
+        
+        <h3><span class="step-number">2</span>macOS Installation</h3>
+        <div class="terminal">
+<span class="prompt">$</span> <span class="command">brew install python3 git libnfc</span>
+<span class="output"># Grant Terminal.app Input Monitoring permission in System Preferences</span>
+        </div>
+        
+        <h3><span class="step-number">3</span>Clone Repository</h3>
+        <div class="terminal">
+<span class="prompt">$</span> <span class="command">git clone https://github.com/aimarketingflow/nfc-github-2-factor.git</span>
+<span class="prompt">$</span> <span class="command">cd nfc-github-2-factor && chmod +x scripts/*.sh</span>
+        </div>
+        
+        <h3><span class="step-number">4</span>Verify NFC Reader</h3>
+        <div class="terminal">
+<span class="prompt">$</span> <span class="command">nfc-list</span>
+<span class="output">NFC device: ACS / ACR122U PICC Interface opened</span>
+        </div>
+        
+        <div class="footer"><strong>AIMF LLC</strong> | Page 2</div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <!-- Page 3: Key Creation -->
+    <div class="page">
+        <div class="header">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div class="aimf-logo">AI</div>
+                <div style="font-size: 18px; font-weight: bold; color: #667eea;">AIMF LLC</div>
+            </div>
+        </div>
+        
+        <h2>Creating NFC-Protected SSH Key</h2>
+        
+        <div class="warning-box">
+            <strong>⚠️ Security:</strong> Use a blank NFC tag. Never record or photograph it.
+        </div>
+        
+        <h3>Key Generation Process</h3>
+        <div class="terminal">
+<span class="prompt">$</span> <span class="command">./scripts/create_nfc_key.sh</span>
+<span class="output">🔒 NFC SSH KEY CREATION
+======================================================
+⚠️  SECURITY PROTOCOL:
+  • You will scan your NFC tag TWICE
+  • Both scans will be completely hidden
+  • Click into terminal before each scan
+
+📡 FIRST SCAN (will be hidden):
+   ✓ First scan captured [HIDDEN]
+
+📡 SECOND SCAN (confirmation):
+   ✓ Second scan captured [HIDDEN]
+
+✅ SSH key created successfully!
+SHA256:uZuMFQwSygO6oCIYgj0k/22tJUclM56Cewch/ijpUYY
+
+📋 PUBLIC KEY FOR GITHUB:
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKx8Q... nfc_ssh@nfc</span>
+        </div>
+        
+        <h3>Add to GitHub</h3>
+        <ol>
+            <li>Go to GitHub Settings → SSH and GPG keys</li>
+            <li>Click "New SSH key"</li>
+            <li>Paste the public key</li>
+            <li>Save</li>
+        </ol>
+        
+        <div class="footer"><strong>AIMF LLC</strong> | Page 3</div>
+    </div>
+    
+    <div class="page-break"></div>
+    
+    <!-- Page 4: Usage -->
+    <div class="page">
+        <div class="header">
+            <div style="display: flex; align-items: center; gap: 15px;">
+                <div class="aimf-logo">AI</div>
+                <div style="font-size: 18px; font-weight: bold; color: #667eea;">AIMF LLC</div>
+            </div>
+        </div>
+        
+        <h2>Daily Usage</h2>
+        
+        <h3>Unlock SSH Key</h3>
+        <div class="terminal">
+<span class="prompt">$</span> <span class="command">./scripts/unlock_ssh_key.sh</span>
+<span class="output">🔓 Unlock SSH Key with NFC
+📡 Scan your NFC tag when prompted...
+✅ Key unlocked and added to SSH agent!</span>
+        </div>
+        
+        <h3>Test Authentication</h3>
+        <div class="terminal">
+<span class="prompt">$</span> <span class="command">./scripts/test_nfc_auth.sh</span>
+<span class="output">Hi username! You've successfully authenticated.
+✅ Authentication successful!</span>
+        </div>
+        
+        <h3>Git Operations</h3>
+        <div class="terminal">
+<span class="prompt">$</span> <span class="command">git push origin main</span>
+<span class="output">Enumerating objects: 5, done.
+Writing objects: 100% (3/3), 1.28 KiB | 1.28 MiB/s, done.</span>
+        </div>
+        
+        <h2>Security Best Practices</h2>
+        <ul>
+            <li>Store NFC tags in secure physical location</li>
+            <li>Never photograph or scan tags with smartphones</li>
+            <li>Use different tags for different services</li>
+            <li>Rotate keys every 90 days</li>
+            <li>Maintain offline backup authentication</li>
+        </ul>
+        
+        <div class="success-box">
+            <strong>✅ Complete Security:</strong> Your SSH authentication now requires physical possession of your NFC tag, eliminating remote attack vectors.
+        </div>
+        
+        <div class="footer">
+            <strong>AIMF LLC</strong> | Advanced Security Solutions | nfc-github-2-factor
+        </div>
+    </div>
+</body>
+</html>
