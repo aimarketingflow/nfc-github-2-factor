@@ -40,23 +40,26 @@ xdg-open index.html  # Linux
 
 ```
 NFC_GitHub_2FA_v2/
-├── index.html          # Interactive setup guide
-├── install.sh          # Automated installer
-├── README.md           # This file
-└── scripts/            # Core authentication scripts
-    ├── create_nfc_key.sh
-    ├── unlock_ssh_key.sh
-    ├── test_nfc_auth.sh
-    └── pi_setup.sh
+├── index.html              # Interactive setup guide
+├── install.sh              # Automated installer
+├── README.md               # This file
+├── HARDWARE_GUIDE.md       # Hardware setup & customization guide
+├── nesdr_chaos_generator.py # NESDR entropy collection
+├── nfc_chaos_verifier.py   # Zero-knowledge verification
+├── nfc_writer_test.py      # NFC tag programming
+└── verify_hardware.py      # Hardware compatibility testing
 ```
 
 ## 🔧 Manual Installation
 
 ### Prerequisites
-- NFC reader (ACR122U or compatible)
-- Blank NFC tags (NTAG213/215/216)
-- Python 3.x
-- Git
+- **NFC Writer**: ACR122U or PN532 module
+- **RFID Reader**: NAVFRMRU RFID Reader (Metal Case) - *Recommended*
+- **NESDR Device**: RTL-SDR for entropy collection  
+- **NFC Tags**: NTAG213/215/216 or Mifare Classic
+- Python 3.x, Git
+
+📖 **See [HARDWARE_GUIDE.md](HARDWARE_GUIDE.md) for detailed hardware setup and customization instructions**
 
 ### Linux/Raspberry Pi
 ```bash
