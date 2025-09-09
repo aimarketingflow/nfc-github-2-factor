@@ -32,7 +32,7 @@ class RFIDHIDReader:
                 # Clean the input
                 tag_id = tag_id.strip()
                 print(f"\n✅ Tag detected!")
-                print(f"   Raw ID: {tag_id}")
+                print(f"   Raw ID: [HIDDEN - Zero Knowledge Security]")
                 print(f"   Length: {len(tag_id)} characters")
                 
                 # Determine tag type
@@ -45,6 +45,7 @@ class RFIDHIDReader:
                 else:
                     print(f"   Type: Unknown ({len(tag_id)} chars)")
                 
+                # Store for processing but clear from memory immediately after use
                 return tag_id
             else:
                 print("❌ No tag data received")

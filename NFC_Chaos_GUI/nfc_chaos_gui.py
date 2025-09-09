@@ -16,7 +16,7 @@ from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout,
                             QTextEdit, QProgressBar, QGroupBox, QGridLayout,
                             QStatusBar, QFrame, QScrollArea, QCheckBox, QSplitter)
 from PyQt6.QtWebEngineWidgets import QWebEngineView
-from PyQt6.QtCore import Qt, QTimer, QThread, pyqtSignal, QSize
+from PyQt6.QtCore import Qt, QTimer, QThread, pyqtSignal, QUrl, QSize
 from PyQt6.QtGui import QFont, QPixmap, QIcon, QPalette, QColor
 
 # Import our existing modules
@@ -344,6 +344,23 @@ class NFCChaosGUI(QMainWindow):
         header_layout = QVBoxLayout()
         doc_header.setLayout(header_layout)
         
+        # Deployment path selection
+        deployment_layout = QHBoxLayout()
+        
+        # Cloud deployment button
+        cloud_btn = QPushButton("☁️ Google Cloud Setup")
+        cloud_btn.clicked.connect(self.show_cloud_setup)
+        cloud_btn.setStyleSheet("background-color: #4285F4; color: white; font-weight: bold; padding: 10px;")
+        deployment_layout.addWidget(cloud_btn)
+        
+        # Git deployment button  
+        git_btn = QPushButton("🔗 GitHub/Git Setup")
+        git_btn.clicked.connect(self.show_git_setup)
+        git_btn.setStyleSheet("background-color: #24292e; color: white; font-weight: bold; padding: 10px;")
+        deployment_layout.addWidget(git_btn)
+        
+        header_layout.addLayout(deployment_layout)
+        
         # Quick navigation buttons
         nav_layout = QHBoxLayout()
         
@@ -366,7 +383,7 @@ class NFCChaosGUI(QMainWindow):
         header_layout.addLayout(nav_layout)
         
         # GitHub link button
-        github_btn = QPushButton("🔗 View on GitHub")
+        github_btn = QPushButton("🔗 View Full Documentation")
         github_btn.clicked.connect(self.open_github_docs)
         github_btn.setStyleSheet(f"background-color: {self.accent_color}; font-weight: bold;")
         header_layout.addWidget(github_btn)
@@ -467,7 +484,7 @@ class NFCChaosGUI(QMainWindow):
                                    "NFC_Google_Cloud_Integration", 
                                    "NFC_GCP_Authentication_Documentation.html")
             if os.path.exists(doc_path):
-                self.doc_viewer.load(f"file://{doc_path}")
+                self.doc_viewer.load(QUrl.fromLocalFile(doc_path))
             else:
                 # Fallback HTML content
                 fallback_html = """
@@ -556,14 +573,173 @@ into physical assets (requiring NFC token possession).
             self.log_message(f"Navigated to documentation section: {section_id}")
         except Exception as e:
             self.log_message(f"Navigation error: {str(e)}")
-    
+
+    def show_cloud_setup(self):
+        """Show Google Cloud setup instructions"""
+        cloud_setup_html = """
+        <html><body style="background: #1F2937; color: #F9FAFB; font-family: Arial; padding: 20px;">
+        <h1 style="color: #4285F4;">☁️ Google Cloud Setup Guide</h1>
+
+        <h2>🔧 Prerequisites</h2>
+        <ul>
+            <li>Google Cloud Platform account</li>
+            <li>NFC hardware (ACR122U or compatible)</li>
+            <li>Python 3.8+ environment</li>
+        </ul>
+
+        <h2>📋 Step-by-Step Setup</h2>
+
+        <h3>1. Create Google Cloud Project</h3>
+        <pre style="background: #374151; padding: 10px; border-radius: 5px;">
+# Create new project
+gcloud projects create your-project-id
+gcloud config set project your-project-id
+        </pre>
+
+        <h3>2. Enable Required APIs</h3>
+        <pre style="background: #374151; padding: 10px; border-radius: 5px;">
+gcloud services enable iam.googleapis.com
+gcloud services enable storage.googleapis.com
+gcloud services enable compute.googleapis.com
+        </pre>
+
+        <h3>3. Create Service Account</h3>
+        <pre style="background: #374151; padding: 10px; border-radius: 5px;">
+gcloud iam service-accounts create nfc-auth-service \\
+    --display-name="NFC Authentication Service"
+        </pre>
+
+        <h3>4. Download Service Account Key</h3>
+        <ol>
+            <li>Go to <a href="https://console.cloud.google.com/iam-admin/serviceaccounts" style="color: #60A5FA;">Google Cloud Console</a></li>
+            <li>Find your service account</li>
+            <li>Click "..." → "Manage Keys" → "Add Key" → "Create New Key"</li>
+            <li>Choose JSON format and download</li>
+        </ol>
+
+        <h3>5. Configure NFC Authentication</h3>
+        <pre style="background: #374151; padding: 10px; border-radius: 5px;">
+python3 step1_nfc_credential_setup.py
+# Follow prompts to encrypt credentials to NFC tags
+        </pre>
+
+        <h2>🛡️ Security Features</h2>
+        <ul>
+            <li><strong>Physical Security:</strong> Credentials encrypted to NFC hardware</li>
+            <li><strong>Dual-Factor:</strong> Requires both NFC tags for access</li>
+            <li><strong>No Software Bypass:</strong> Cannot be compromised without physical tokens</li>
+        </ul>
+
+        <h2>🚀 Quick Start Commands</h2>
+        <pre style="background: #374151; padding: 10px; border-radius: 5px;">
+# Test your setup
+python3 complete_vault_test.py
+
+# Run authentication demo
+python3 nfc_gcp_authenticator.py
+        </pre>
+        </body></html>
+        """
+
+        if hasattr(self, 'doc_viewer'):
+            self.doc_viewer.setHtml(cloud_setup_html)
+
+    def show_git_setup(self):
+        """Show GitHub/Git setup instructions"""
+        git_setup_html = """
+        <html><body style="background: #1F2937; color: #F9FAFB; font-family: Arial; padding: 20px;">
+        <h1 style="color: #24292e; background: white; padding: 10px; border-radius: 5px;">🔗 GitHub/Git Setup Guide</h1>
+
+        <h2>🔧 Prerequisites</h2>
+        <ul>
+            <li>GitHub account</li>
+            <li>Git installed locally</li>
+            <li>NFC hardware for authentication</li>
+            <li>SSH key pair</li>
+        </ul>
+
+        <h2>📋 Step-by-Step Setup</h2>
+
+        <h3>1. Clone Repository</h3>
+        <pre style="background: #374151; padding: 10px; border-radius: 5px;">
+# Clone the public repository
+git clone https://github.com/aimarketingflow/nfc-gcloud-2-factor.git
+cd nfc-gcloud-2-factor
+        </pre>
+
+        <h3>2. Install Dependencies</h3>
+        <pre style="background: #374151; padding: 10px; border-radius: 5px;">
+# Create virtual environment
+python3 -m venv venv_nfc_auth
+source venv_nfc_auth/bin/activate
+
+# Install requirements
+pip3 install -r requirements_nfc_gcp.txt
+        </pre>
+
+        <h3>3. Configure Your Credentials</h3>
+        <pre style="background: #374151; padding: 10px; border-radius: 5px;">
+# Edit configuration files
+cp test_deployment/project_config.json.example project_config.json
+# Update with your project details
+        </pre>
+
+        <h3>4. Set Up NFC-Protected SSH</h3>
+        <ol>
+            <li>Generate SSH key pair</li>
+            <li>Encrypt private key to NFC tags</li>
+            <li>Add public key to GitHub</li>
+            <li>Test NFC-based authentication</li>
+        </ol>
+
+        <h3>5. Test Your Setup</h3>
+        <pre style="background: #374151; padding: 10px; border-radius: 5px;">
+# Test NFC hardware
+python3 verify_hardware.py
+
+# Test authentication flow
+python3 test_deployment/test_complete_flow.py
+        </pre>
+
+        <h2>🔐 GitHub Integration Features</h2>
+        <ul>
+            <li><strong>NFC-Protected SSH:</strong> Private keys stored on NFC tags</li>
+            <li><strong>Secure Git Operations:</strong> Push/pull requires NFC authentication</li>
+            <li><strong>Repository Security:</strong> No credentials stored in code</li>
+        </ul>
+
+        <h2>📚 Available Repositories</h2>
+        <ul>
+            <li><a href="https://github.com/aimarketingflow/nfc-gcloud-2-factor" style="color: #60A5FA;">NFC Google Cloud Auth (Public)</a></li>
+            <li><a href="https://github.com/aimarketingflow/nfc-github-2-factor" style="color: #60A5FA;">NFC GitHub 2FA (Public)</a></li>
+        </ul>
+
+        <h2>🛠️ Development Workflow</h2>
+        <pre style="background: #374151; padding: 10px; border-radius: 5px;">
+# Authenticate with NFC
+python3 nfc_gcp_authenticator.py
+
+# Make changes
+git add .
+git commit -m "Your changes"
+
+# Push (requires NFC authentication)
+git push origin main
+        </pre>
+        </body></html>
+        """
+
+        if hasattr(self, 'doc_viewer'):
+            self.doc_viewer.setHtml(git_setup_html)
+
     def open_github_docs(self):
-        """Open GitHub documentation in system browser"""
+        """Open GitHub documentation in browser"""
         import webbrowser
         webbrowser.open("https://github.com/aimarketingflow/nfc-gcloud-2-factor")
         self.log_message("Opened GitHub documentation in browser")
-    
+
     def create_settings_tab(self):
+        # ... (rest of the code remains the same)
         """Create the settings tab"""
         settings = QWidget()
         layout = QVBoxLayout()

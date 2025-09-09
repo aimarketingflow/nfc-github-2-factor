@@ -107,8 +107,8 @@ class NFCWriterTest:
             data, sw1, sw2 = self.connection.transmit(GET_UID)
             
             if sw1 == 0x90 and sw2 == 0x00:
-                uid_hex = toHexString(data)
-                print(f"   Card UID: {uid_hex[:2]}:••:••:••")
+                # ZERO-KNOWLEDGE: Never display any UID information
+                print(f"   Card UID: [HIDDEN - Zero Knowledge Security]")
                 return data
             else:
                 return None

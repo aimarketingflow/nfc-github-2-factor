@@ -57,8 +57,10 @@ def test_tag_reading():
         tag_input = input("   Tag ID (auto-typed): ").strip()
         
         if tag_input:
+            # ZERO-KNOWLEDGE: Never display actual tag data
             print(f"\n✅ RFID reader working!")
             print(f"   Read: {len(tag_input)} characters")
+            print(f"   Tag ID: [HIDDEN - Zero Knowledge Security]")
             print(f"   Type: {'HEX' if any(c in tag_input.lower() for c in 'abcdef') else 'DECIMAL'}")
             
             # Try to parse as chaos value
@@ -67,6 +69,8 @@ def test_tag_reading():
             elif len(tag_input) == 10:
                 print(f"   Format: Likely 125kHz tag (may not be NFC)")
             
+            # Clear sensitive data immediately 
+            tag_input = None
             return True
         else:
             print("❌ No tag data received")
