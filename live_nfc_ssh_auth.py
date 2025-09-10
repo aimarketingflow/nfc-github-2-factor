@@ -134,7 +134,7 @@ def invisible_nfc_scan():
 def find_usb_drive():
     """Find the USB drive with authentication pack"""
     
-    usb_paths = ['/Volumes/BLUESAM', '/Volumes/SILVER', '/Volumes/USB', '/Volumes/Untitled']
+    usb_paths = ['/Volumes/YOUR_USB_DRIVE', '/Volumes/SILVER', '/Volumes/USB', '/Volumes/Untitled']
     
     for path in usb_paths:
         if os.path.exists(path):
@@ -271,7 +271,7 @@ def update_ssh_config(private_key_path):
     # Create SSH config entry
     config_entry = f"""
 # MobileShield Live NFC GitHub Authentication
-Host github-live-nfc
+Host github-nfc-auth
     HostName github.com
     User git
     IdentityFile {private_key_path}
@@ -298,7 +298,7 @@ def test_github_connection(private_key_path):
     
     try:
         result = subprocess.run(
-            ['ssh', '-T', 'github-live-nfc'],
+            ['ssh', '-T', 'github-nfc-auth'],
             capture_output=True,
             text=True,
             timeout=30
@@ -378,7 +378,7 @@ def main():
     
     # Step 7: Update SSH config
     update_ssh_config(private_key_path)
-    print("✅ SSH config updated (Host: github-live-nfc)")
+    print("✅ SSH config updated (Host: github-nfc-auth)")
     
     # Step 8: Display public key for GitHub
     print()

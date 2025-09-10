@@ -52,9 +52,9 @@ def create_demo_pack():
     print("=" * 50)
     
     # Find USB
-    usb_path = '/Volumes/BLUESAM'
+    usb_path = '/Volumes/YOUR_USB_DRIVE'
     if not os.path.exists(usb_path):
-        print("❌ USB not found at /Volumes/BLUESAM")
+        print("❌ USB not found at /Volumes/YOUR_USB_DRIVE")
         return False
     
     print(f"✅ Found USB: {usb_path}")
@@ -117,7 +117,7 @@ def authenticate_demo():
     print("=" * 50)
     
     # Find USB and pack
-    usb_path = '/Volumes/BLUESAM'
+    usb_path = '/Volumes/YOUR_USB_DRIVE'
     auth_folder = os.path.join(usb_path, 'zero_knowledge_auth')
     pack_file = os.path.join(auth_folder, 'zero_knowledge_pack.json')
     

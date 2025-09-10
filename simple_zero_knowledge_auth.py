@@ -109,9 +109,9 @@ def create_fresh_pack():
     print("=" * 50)
     
     # Find USB
-    usb_path = '/Volumes/BLUESAM'
+    usb_path = '/Volumes/YOUR_USB_DRIVE'
     if not os.path.exists(usb_path):
-        print("❌ USB not found at /Volumes/BLUESAM")
+        print("❌ USB not found at /Volumes/YOUR_USB_DRIVE")
         return False
     
     print(f"✅ Found USB: {usb_path}")
@@ -205,7 +205,7 @@ def zero_knowledge_auth():
     print("🔐 ZERO-KNOWLEDGE SSH AUTHENTICATION")
     print("=" * 50)
     
-    usb_path = '/Volumes/BLUESAM'
+    usb_path = '/Volumes/YOUR_USB_DRIVE'
     pack_file = os.path.join(usb_path, 'zero_knowledge_auth_pack.json')
     
     if not os.path.exists(pack_file):
@@ -302,7 +302,7 @@ def zero_knowledge_auth():
     ssh_config_path = os.path.expanduser('~/.ssh/config')
     config_entry = f"""
 # Zero-Knowledge NFC GitHub Authentication
-Host github-zero-nfc
+Host github-nfc-auth
     HostName github.com
     User git
     IdentityFile {private_key_path}
@@ -312,7 +312,7 @@ Host github-zero-nfc
     with open(ssh_config_path, 'a') as f:
         f.write(config_entry)
     
-    print("✅ SSH config updated (Host: github-zero-nfc)")
+    print("✅ SSH config updated (Host: github-nfc-auth)")
     
     # Display public key
     print("\n🔗 ADD TO GITHUB SSH KEYS:")

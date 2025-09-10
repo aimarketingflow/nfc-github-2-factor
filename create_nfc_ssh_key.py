@@ -51,7 +51,7 @@ def generate_nfc_passphrase():
     print("=" * 40)
     
     # Find USB and pack
-    usb_path = '/Volumes/BLUESAM'
+    usb_path = '/Volumes/YOUR_USB_DRIVE'
     auth_folder = os.path.join(usb_path, 'real_ambient_auth')
     pack_file = os.path.join(auth_folder, 'real_ambient_pack.json')
     
@@ -172,7 +172,7 @@ def create_ssh_key_with_nfc_passphrase():
         
         # Update SSH config
         ssh_config_path = os.path.expanduser("~/.ssh/config")
-        host_alias = f"github-nfc-seamless"
+        host_alias = f"github-nfc-auth"
         
         config_entry = f"""
 # NFC Seamless SSH key with dual authentication

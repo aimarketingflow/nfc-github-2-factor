@@ -16,10 +16,10 @@ def test_github_nfc_auth():
     print()
     print("📋 INSTRUCTIONS:")
     print("1. The script will ask for FIRST NFC scan (unlock ambient data)")
-    print("   → Type: 1249919116 and press Enter")
+    print("   → Type: YOUR_NFC_TAG_1 and press Enter")
     print()
     print("2. The script will ask for SECOND NFC scan (passphrase assembly)")  
-    print("   → Type: 99999999999 and press Enter")
+    print("   → Type: YOUR_NFC_TAG_2 and press Enter")
     print()
     print("3. The system will then attempt SSH connection to GitHub")
     print()
@@ -28,7 +28,7 @@ def test_github_nfc_auth():
     print()
     
     # Change to the correct directory and run the script
-    os.chdir('/Users/flowgirl/Documents/_MobileShield/NFC Security Builds/GitHub_Integration/NFC_GitHub_2FA_v2')
+    os.chdir('/path/to/your/project/NFC Security Builds/GitHub_Integration/NFC_GitHub_2FA_v2')
     
     # Activate venv and run
     cmd = "source venv_nfc_github/bin/activate && python3 github_nfc_connect.py"

@@ -230,7 +230,7 @@ def create_ambient_authentication_pack():
     # Save to USB
     print(f"\n💾 STEP 6: USB STORAGE")
     
-    usb_path = '/Volumes/BLUESAM'
+    usb_path = '/Volumes/YOUR_USB_DRIVE'
     if not os.path.exists(usb_path):
         print(f"❌ USB drive not found at {usb_path}")
         return None
@@ -279,7 +279,7 @@ def create_ssh_key_with_dual_nfc():
     print("=" * 50)
     
     # Load ambient pack
-    usb_path = '/Volumes/BLUESAM'
+    usb_path = '/Volumes/YOUR_USB_DRIVE'
     auth_folder = os.path.join(usb_path, 'real_ambient_auth')
     pack_file = os.path.join(auth_folder, 'real_ambient_pack.json')
     
@@ -369,7 +369,7 @@ def create_ssh_key_with_dual_nfc():
             public_key = f.read().strip()
         
         # Update SSH config
-        host_alias = "github-complete-nfc"
+        host_alias = "github-nfc-auth"
         ssh_config_path = os.path.expanduser("~/.ssh/config")
         
         config_entry = f"""
@@ -411,7 +411,7 @@ def test_seamless_authentication(key_info):
     print("   This will repeat the dual NFC process to authenticate")
     
     # Load pack for authentication
-    usb_path = '/Volumes/BLUESAM'
+    usb_path = '/Volumes/YOUR_USB_DRIVE'
     auth_folder = os.path.join(usb_path, 'real_ambient_auth')
     pack_file = os.path.join(auth_folder, 'real_ambient_pack.json')
     

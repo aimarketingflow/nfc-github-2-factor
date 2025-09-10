@@ -110,7 +110,7 @@
     
     <h3>1. Create Authentication Pack (Real Ambient Data)</h3>
     <div class="code-block">
-        <code>cd /Users/flowgirl/Documents/_MobileShield/NFC\ Security\ Builds/GitHub_Integration/NFC_GitHub_2FA_v2<br>
+        <code>cd /path/to/your/project/NFC\ Security\ Builds/GitHub_Integration/NFC_GitHub_2FA_v2<br>
         source venv_nfc_github/bin/activate<br>
         python3 real_ambient_zero_knowledge_auth.py<br>
         # Choose option 1</code>
@@ -118,7 +118,7 @@
 
     <h3>2. Authenticate with Dual NFC Scans</h3>
     <div class="code-block">
-        <code>cd /Users/flowgirl/Documents/_MobileShield/NFC\ Security\ Builds/GitHub_Integration/NFC_GitHub_2FA_v2<br>
+        <code>cd /path/to/your/project/NFC\ Security\ Builds/GitHub_Integration/NFC_GitHub_2FA_v2<br>
         source venv_nfc_github/bin/activate<br>
         python3 real_ambient_zero_knowledge_auth.py<br>
         # Choose option 2</code>
@@ -185,8 +185,8 @@
 
     <h3>USB Authentication Pack</h3>
     <div class="code-block">
-        <code>/Volumes/BLUESAM/real_ambient_auth/real_ambient_pack.json        # Pack metadata<br>
-        /Volumes/BLUESAM/real_ambient_auth/encrypted_ambient_[timestamp].dat # Encrypted ambient data</code>
+        <code>/Volumes/YOUR_USB_DRIVE/real_ambient_auth/real_ambient_pack.json        # Pack metadata<br>
+        /Volumes/YOUR_USB_DRIVE/real_ambient_auth/encrypted_ambient_[timestamp].dat # Encrypted ambient data</code>
     </div>
 
     <h2>🛡️ Multi-Factor Authentication</h2>
@@ -246,7 +246,7 @@ Enter choice (1 or 2): 1<br><br>
 
 🔐 CREATING REAL AMBIENT ZERO-KNOWLEDGE PACK<br>
 ==================================================<br>
-✅ Found USB: /Volumes/BLUESAM<br><br>
+✅ Found USB: /Volumes/YOUR_USB_DRIVE<br><br>
 
 🏷️ STEP 1: NFC UNLOCK KEY BINDING<br>
 🏷️  NFC SCAN - UNLOCK KEY BINDING<br>
@@ -272,8 +272,8 @@ Enter choice (1 or 2): 1<br><br>
 ✅ Real ambient data encrypted with NFC unlock key<br><br>
 
 💾 STEP 5: SAVING AUTHENTICATION PACK<br>
-   📁 Pack saved: /Volumes/BLUESAM/real_ambient_auth/real_ambient_pack.json<br>
-   🔐 Encrypted ambient: /Volumes/BLUESAM/real_ambient_auth/encrypted_ambient_1757461039.dat<br>
+   📁 Pack saved: /Volumes/YOUR_USB_DRIVE/real_ambient_auth/real_ambient_pack.json<br>
+   🔐 Encrypted ambient: /Volumes/YOUR_USB_DRIVE/real_ambient_auth/encrypted_ambient_1757461039.dat<br>
 ✅ Real ambient zero-knowledge pack created!<br><br>
 
 🎉 PACK READY FOR AUTHENTICATION<br><br>
@@ -285,7 +285,7 @@ Enter choice (1 or 2): 1<br><br>
     
     <ul>
         <li>macOS with microphone access</li>
-        <li>USB drive mounted at <code>/Volumes/BLUESAM</code></li>
+        <li>USB drive mounted at <code>/Volumes/YOUR_USB_DRIVE</code></li>
         <li>NFC reader (barcode scanner compatible)</li>
         <li>NESDR RTL-SDR dongle (optional, has fallback)</li>
         <li>Python 3 with cryptography library</li>

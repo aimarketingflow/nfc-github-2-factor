@@ -139,7 +139,7 @@ setup_scripts() {
     
     # Clone repository if not already present
     if [ ! -d "scripts" ]; then
-        git clone https://github.com/aimarketingflow/nfc-github-2-factor.git temp_repo
+        git clone https://github.com/YOUR_GITHUB_USERNAME/nfc-github-2-factor.git temp_repo
         mv temp_repo/scripts .
         rm -rf temp_repo
     fi

@@ -94,7 +94,7 @@ def generate_ssh_passphrase():
     print("=" * 50, file=sys.stderr)
     
     # Find USB and pack
-    usb_path = '/Volumes/BLUESAM'
+    usb_path = '/Volumes/YOUR_USB_DRIVE'
     auth_folder = os.path.join(usb_path, 'real_ambient_auth')
     pack_file = os.path.join(auth_folder, 'real_ambient_pack.json')
     

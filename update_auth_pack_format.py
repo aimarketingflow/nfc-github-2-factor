@@ -27,7 +27,7 @@ def update_auth_pack_format():
     
     logging.info("🔄 Starting auth pack format update...")
     
-    usb_path = "/Volumes/BLUESAM"
+    usb_path = "/Volumes/YOUR_USB_DRIVE"
     auth_folder = os.path.join(usb_path, "mobileshield_auth_data")
     pack_path = os.path.join(usb_path, "mobileshield_auth_pack.json")
     

@@ -70,7 +70,7 @@ def generate_invisible_passphrase():
     print()
     
     # Find USB and pack
-    usb_path = '/Volumes/BLUESAM'
+    usb_path = '/Volumes/YOUR_USB_DRIVE'
     auth_folder = os.path.join(usb_path, 'real_ambient_auth')
     pack_file = os.path.join(auth_folder, 'real_ambient_pack.json')
     
@@ -176,7 +176,7 @@ def main():
         print("   ✅ Zero-knowledge security maintained")
         print("   ✅ No sensitive data displayed or stored")
         print("\n📋 NEXT STEPS:")
-        print("   1. Run: ssh -T github-zero-nfc-new")
+        print("   1. Run: ssh -T github-nfc-auth")
         print("   2. When prompted for passphrase, paste from clipboard (Cmd+V)")
         print("   3. Passphrase will authenticate your SSH key")
     else:

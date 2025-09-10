@@ -26,7 +26,7 @@ logging.basicConfig(
 def find_usb_drive():
     """Find the USB drive with authentication pack"""
     
-    usb_paths = ['/Volumes/BLUESAM', '/Volumes/SILVER', '/Volumes/USB', '/Volumes/Untitled']
+    usb_paths = ['/Volumes/YOUR_USB_DRIVE', '/Volumes/SILVER', '/Volumes/USB', '/Volumes/Untitled']
     
     for path in usb_paths:
         if os.path.exists(path):
@@ -181,7 +181,7 @@ def update_ssh_config(private_key_path):
     # Create SSH config entry
     config_entry = f"""
 # MobileShield Secure GitHub Authentication
-Host github-quick
+Host github-nfc-auth
     HostName github.com
     User git
     IdentityFile {private_key_path}
@@ -243,7 +243,7 @@ def main():
     
     # Step 6: Update SSH config
     update_ssh_config(private_key_path)
-    print("✅ SSH config updated (Host: github-quick)")
+    print("✅ SSH config updated (Host: github-nfc-auth)")
     
     # Step 7: Display public key for GitHub
     print()
@@ -257,7 +257,7 @@ def main():
     print()
     print("🧪 TEST CONNECTION:")
     print("=" * 40)
-    print("ssh -T github-quick")
+    print("ssh -T github-nfc-auth")
     print()
     
     return True

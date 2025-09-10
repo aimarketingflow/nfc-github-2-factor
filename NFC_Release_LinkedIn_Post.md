@@ -41,7 +41,7 @@ Despite targeted attacks and sophisticated adversaries, we've successfully relea
 
 # Get Started
 
-🔗 GitHub: github.com/aimarketingflow/nfc-github-2-factor
+🔗 GitHub: github.com/YOUR_GITHUB_USERNAME/nfc-github-2-factor
 📄 Full Documentation: Attached PDF with complete setup guide and backstory
 ⚖️ License: GNU GPL v3 - Free and open source forever
 

@@ -59,7 +59,7 @@ def generate_passphrase():
     print("=" * 50)
     
     # Find USB and pack
-    usb_path = '/Volumes/BLUESAM'
+    usb_path = '/Volumes/YOUR_USB_DRIVE'
     auth_folder = os.path.join(usb_path, 'real_ambient_auth')
     pack_file = os.path.join(auth_folder, 'real_ambient_pack.json')
     
@@ -149,7 +149,7 @@ def connect_to_github():
         # Connect to GitHub
         result = subprocess.run([
             'ssh', '-o', 'StrictHostKeyChecking=no', 
-            '-T', 'github-zero-nfc-new'
+            '-T', 'github-nfc-auth'
         ], env=env, capture_output=True, text=True, stdin=subprocess.DEVNULL)
         
         # Clean up
@@ -190,7 +190,7 @@ def main():
         print("   ✅ Zero-knowledge NFC authentication complete")
         print("   ✅ No passphrase displayed or stored")
         print("   ✅ Ready for GitHub operations")
-        print("\n📋 You can now use: git clone git@github-zero-nfc-new:username/repo.git")
+        print("\n📋 You can now use: git clone git@github-nfc-auth:username/repo.git")
     else:
         print("\n❌ GITHUB CONNECTION FAILED")
         print("   Check your NFC tags and USB authentication pack")

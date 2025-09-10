@@ -7,7 +7,7 @@ Complete zero-knowledge NFC authentication system for GitHub SSH with real ambie
 
 ### 1. Create Authentication Pack (Real Ambient Data)
 ```bash
-cd /Users/flowgirl/Documents/_MobileShield/NFC\ Security\ Builds/GitHub_Integration/NFC_GitHub_2FA_v2
+cd /path/to/your/project/NFC\ Security\ Builds/GitHub_Integration/NFC_GitHub_2FA_v2
 source venv_nfc_github/bin/activate
 python3 real_ambient_zero_knowledge_auth.py
 # Choose option 1
@@ -15,7 +15,7 @@ python3 real_ambient_zero_knowledge_auth.py
 
 ### 2. Authenticate with Dual NFC Scans
 ```bash
-cd /Users/flowgirl/Documents/_MobileShield/NFC\ Security\ Builds/GitHub_Integration/NFC_GitHub_2FA_v2
+cd /path/to/your/project/NFC\ Security\ Builds/GitHub_Integration/NFC_GitHub_2FA_v2
 source venv_nfc_github/bin/activate
 python3 real_ambient_zero_knowledge_auth.py
 # Choose option 2
@@ -50,8 +50,8 @@ python3 real_ambient_zero_knowledge_auth.py
 
 ### USB Authentication Pack
 ```
-/Volumes/BLUESAM/real_ambient_auth/real_ambient_pack.json        # Pack metadata
-/Volumes/BLUESAM/real_ambient_auth/encrypted_ambient_[timestamp].dat # Encrypted ambient data
+/Volumes/YOUR_USB_DRIVE/real_ambient_auth/real_ambient_pack.json        # Pack metadata
+/Volumes/YOUR_USB_DRIVE/real_ambient_auth/encrypted_ambient_[timestamp].dat # Encrypted ambient data
 ```
 
 ## Security Model
@@ -109,7 +109,7 @@ Enter choice (1 or 2): 1
 
 🔐 CREATING REAL AMBIENT ZERO-KNOWLEDGE PACK
 ==================================================
-✅ Found USB: /Volumes/BLUESAM
+✅ Found USB: /Volumes/YOUR_USB_DRIVE
 
 🏷️ STEP 1: NFC UNLOCK KEY BINDING
 🏷️  NFC SCAN - UNLOCK KEY BINDING
@@ -135,8 +135,8 @@ Enter choice (1 or 2): 1
 ✅ Real ambient data encrypted with NFC unlock key
 
 💾 STEP 5: SAVING AUTHENTICATION PACK
-   📁 Pack saved: /Volumes/BLUESAM/real_ambient_auth/real_ambient_pack.json
-   🔐 Encrypted ambient: /Volumes/BLUESAM/real_ambient_auth/encrypted_ambient_1757461039.dat
+   📁 Pack saved: /Volumes/YOUR_USB_DRIVE/real_ambient_auth/real_ambient_pack.json
+   🔐 Encrypted ambient: /Volumes/YOUR_USB_DRIVE/real_ambient_auth/encrypted_ambient_1757461039.dat
 ✅ Real ambient zero-knowledge pack created!
 
 🎉 PACK READY FOR AUTHENTICATION
@@ -155,7 +155,7 @@ Edit the `rtl_sdr` command frequency parameter `-f 433920000` to capture differe
 ### SSH Config Integration
 Add to `~/.ssh/config`:
 ```
-Host github-zero-nfc
+Host github-nfc-auth
     HostName github.com
     User git
     IdentityFile ~/.ssh/github_real_ambient_[timestamp]
@@ -163,7 +163,7 @@ Host github-zero-nfc
 
 ## System Requirements
 - macOS with microphone access
-- USB drive mounted at `/Volumes/BLUESAM`
+- USB drive mounted at `/Volumes/YOUR_USB_DRIVE`
 - NFC reader (barcode scanner compatible)
 - NESDR RTL-SDR dongle (optional, has fallback)
 - Python 3 with cryptography library

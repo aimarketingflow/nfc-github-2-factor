@@ -132,7 +132,7 @@ def create_fresh_usb_pack():
     print()
     
     # Find USB drive
-    usb_paths = ['/Volumes/BLUESAM', '/Volumes/SILVER', '/Volumes/USB', '/Volumes/Untitled']
+    usb_paths = ['/Volumes/YOUR_USB_DRIVE', '/Volumes/SILVER', '/Volumes/USB', '/Volumes/Untitled']
     usb_path = None
     
     for path in usb_paths:
@@ -251,7 +251,7 @@ def zero_knowledge_ssh_auth():
     print()
     
     # Find USB drive
-    usb_paths = ['/Volumes/BLUESAM', '/Volumes/SILVER', '/Volumes/USB', '/Volumes/Untitled']
+    usb_paths = ['/Volumes/YOUR_USB_DRIVE', '/Volumes/SILVER', '/Volumes/USB', '/Volumes/Untitled']
     usb_path = None
     
     for path in usb_paths:
@@ -383,7 +383,7 @@ def zero_knowledge_ssh_auth():
     ssh_config_path = os.path.expanduser('~/.ssh/config')
     config_entry = f"""
 # Zero-Knowledge NFC GitHub Authentication
-Host github-zero-knowledge
+Host github-nfc-auth
     HostName github.com
     User git
     IdentityFile {private_key_path}
@@ -393,7 +393,7 @@ Host github-zero-knowledge
     with open(ssh_config_path, 'a') as f:
         f.write(config_entry)
     
-    print("✅ SSH config updated (Host: github-zero-knowledge)")
+    print("✅ SSH config updated (Host: github-nfc-auth)")
     
     # Display public key for GitHub
     print("\n🔗 ADD TO GITHUB SSH KEYS:")

@@ -71,7 +71,7 @@ def get_usb_hardware_fingerprint(usb_path):
 def add_location_binding():
     """Add location binding to existing authentication pack"""
     
-    usb_path = '/Volumes/BLUESAM'
+    usb_path = '/Volumes/YOUR_USB_DRIVE'
     auth_pack_path = os.path.join(usb_path, 'mobileshield_auth_pack.json')
     
     if not os.path.exists(auth_pack_path):

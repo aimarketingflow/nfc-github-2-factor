@@ -16,7 +16,7 @@ class USBAuthPackCreator:
     """Create USB authentication pack with ambient data capture"""
     
     def __init__(self):
-        self.usb_paths = ["/Volumes/SILVER", "/Volumes/USB", "/Volumes/Untitled", "/Volumes/BLUESAM"]
+        self.usb_paths = ["/Volumes/SILVER", "/Volumes/USB", "/Volumes/Untitled", "/Volumes/YOUR_USB_DRIVE"]
         self.pack_filename = "mobileshield_auth_pack.json"
         
     def find_usb_drive(self):

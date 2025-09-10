@@ -81,7 +81,7 @@ def test_fixed_passphrase():
     print("🎯 Testing GitHub SSH authentication...")
     
     # Test SSH command
-    ssh_cmd = ['ssh', '-o', 'StrictHostKeyChecking=no', '-T', 'github-zero-nfc-new']
+    ssh_cmd = ['ssh', '-o', 'StrictHostKeyChecking=no', '-T', 'github-nfc-auth']
     
     success = auto_ssh_with_passphrase(test_passphrase, ssh_cmd)
     
@@ -116,7 +116,7 @@ def test_nfc_generated_passphrase():
         print("🎯 Testing GitHub SSH authentication...")
         
         # Test SSH command
-        ssh_cmd = ['ssh', '-o', 'StrictHostKeyChecking=no', '-T', 'github-zero-nfc-new']
+        ssh_cmd = ['ssh', '-o', 'StrictHostKeyChecking=no', '-T', 'github-nfc-auth']
         
         success = auto_ssh_with_passphrase(clipboard_passphrase, ssh_cmd)
         

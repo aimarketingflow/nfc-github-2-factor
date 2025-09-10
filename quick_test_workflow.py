@@ -25,7 +25,7 @@ class QuickTestWorkflow:
     """Non-blocking test workflow for USB+NFC+Audio system"""
     
     def __init__(self):
-        self.usb_paths = ["/Volumes/SILVER", "/Volumes/USB", "/Volumes/Untitled", "/Volumes/BLUESAM"]
+        self.usb_paths = ["/Volumes/SILVER", "/Volumes/USB", "/Volumes/Untitled", "/Volumes/YOUR_USB_DRIVE"]
         
     def test_usb_detection(self):
         """Test USB drive detection"""

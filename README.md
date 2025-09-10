@@ -173,7 +173,7 @@ Contributions welcome! Please ensure:
 
 ## 🔗 Repository
 
-https://github.com/aimarketingflow/nfc-github-2-factor
+https://github.com/YOUR_GITHUB_USERNAME/nfc-github-2-factor
 
 ---
 

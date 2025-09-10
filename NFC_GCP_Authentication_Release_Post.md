@@ -107,7 +107,7 @@ def derive_vault_key(nfc_uid: str, device_fingerprint: str) -> bytes:
 ### **Quick Start**
 ```bash
 # Clone repository
-git clone https://github.com/aimarketingflow/nfc-gcloud-2-factor.git
+git clone https://github.com/YOUR_GITHUB_USERNAME/nfc-gcloud-2-factor.git
 cd nfc-gcloud-2-factor
 
 # Install dependencies
@@ -148,7 +148,7 @@ python3 secure_gcp_client.py --test-auth
 12. **Future Enhancements**
 13. **Appendices**
 
-**📖 [Complete Documentation](https://github.com/aimarketingflow/nfc-gcloud-2-factor/blob/main/NFC_GCP_Authentication_Documentation.html)**
+**📖 [Complete Documentation](https://github.com/YOUR_GITHUB_USERNAME/nfc-gcloud-2-factor/blob/main/NFC_GCP_Authentication_Documentation.html)**
 
 ---
 
@@ -168,7 +168,7 @@ This is the **first system** to successfully transform cloud credentials from di
 ## 🌐 **Get Started Today**
 
 ### **GitHub Repository**
-🔗 **https://github.com/aimarketingflow/nfc-gcloud-2-factor**
+🔗 **https://github.com/YOUR_GITHUB_USERNAME/nfc-gcloud-2-factor**
 
 ### **Hardware Shopping List**
 - **NFC Reader:** ACR122U USB ($25)

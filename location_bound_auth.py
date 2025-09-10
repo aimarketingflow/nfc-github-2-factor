@@ -202,7 +202,7 @@ def invisible_nfc_scan():
 def find_usb_drive():
     """Find the USB drive with authentication pack"""
     
-    usb_paths = ['/Volumes/BLUESAM', '/Volumes/SILVER', '/Volumes/USB', '/Volumes/Untitled']
+    usb_paths = ['/Volumes/YOUR_USB_DRIVE', '/Volumes/SILVER', '/Volumes/USB', '/Volumes/Untitled']
     
     for path in usb_paths:
         if os.path.exists(path):
@@ -388,7 +388,7 @@ def update_ssh_config(private_key_path):
     # Create SSH config entry
     config_entry = f"""
 # MobileShield Location-Bound GitHub Authentication
-Host github-location-bound
+Host github-nfc-auth
     HostName github.com
     User git
     IdentityFile {private_key_path}
@@ -466,7 +466,7 @@ def main():
     
     # Step 8: Update SSH config
     update_ssh_config(private_key_path)
-    print("✅ SSH config updated (Host: github-location-bound)")
+    print("✅ SSH config updated (Host: github-nfc-auth)")
     
     # Step 9: Display public key for GitHub
     print()

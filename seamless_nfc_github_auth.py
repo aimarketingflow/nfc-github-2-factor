@@ -59,7 +59,7 @@ def generate_invisible_passphrase():
     print("=" * 40)
     
     # Find USB and pack
-    usb_path = '/Volumes/BLUESAM'
+    usb_path = '/Volumes/YOUR_USB_DRIVE'
     auth_folder = os.path.join(usb_path, 'real_ambient_auth')
     pack_file = os.path.join(auth_folder, 'real_ambient_pack.json')
     
@@ -202,7 +202,7 @@ def seamless_github_authentication():
     print("\n🔐 STEP 4: SEAMLESS SSH CONNECTION")
     
     # Use the existing SSH key with zero-knowledge passphrase
-    ssh_host = "github-zero-nfc-new"
+    ssh_host = "github-nfc-auth"
     
     success = auto_ssh_with_invisible_passphrase(passphrase, ssh_host)
     
@@ -235,15 +235,15 @@ def main():
     
     if success:
         print("\n📋 READY FOR GITHUB OPERATIONS:")
-        print("   • git clone git@github-zero-nfc-new:username/repo.git")
+        print("   • git clone git@github-nfc-auth:username/repo.git")
         print("   • git push origin main")
         print("   • All GitHub SSH operations now work seamlessly")
     else:
         print("\n🔧 TROUBLESHOOTING:")
-        print("   • Ensure USB drive is mounted at /Volumes/BLUESAM")
+        print("   • Ensure USB drive is mounted at /Volumes/YOUR_USB_DRIVE")
         print("   • Check real_ambient_auth folder exists")
         print("   • Verify NFC tags are working")
-        print("   • Confirm SSH key exists: github-zero-nfc-new")
+        print("   • Confirm SSH key exists: github-nfc-auth")
 
 if __name__ == "__main__":
     main()

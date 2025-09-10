@@ -68,7 +68,7 @@ def test_ssh_key_alone():
         
         if "successfully authenticated" in result.stderr:
             print("⚠️  RESULT: SSH key works for GitHub!")
-            print("   GitHub says: 'Hi aimarketingflow! You've successfully authenticated'")
+            print("   GitHub says: 'Hi YOUR_GITHUB_USERNAME! You've successfully authenticated'")
             print()
             
             # But show the critical limitation

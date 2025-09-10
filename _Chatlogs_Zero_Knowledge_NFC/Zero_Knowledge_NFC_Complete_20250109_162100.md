@@ -63,7 +63,7 @@ Successfully implemented and validated a complete zero-knowledge NFC authenticat
 ```
 🔐 CREATING REAL AMBIENT ZERO-KNOWLEDGE PACK
 ==================================================
-✅ Found USB: /Volumes/BLUESAM
+✅ Found USB: /Volumes/YOUR_USB_DRIVE
 ✅ NFC unlock key bound (never stored)
 ✅ Ambient audio captured: 2302014 bytes
 ✅ Ambient EMF captured: 40960000 bytes
@@ -78,11 +78,7 @@ Successfully implemented and validated a complete zero-knowledge NFC authenticat
 ✅ Found real ambient authentication pack
 ✅ Real ambient data unlocked (never displayed)
 ✅ Passphrase assembled invisibly (never displayed)
-✅ SSH key generated: /Users/flowgirl/.ssh/github_real_ambient_1757461202
-🎉 REAL AMBIENT ZERO-KNOWLEDGE AUTHENTICATION COMPLETE
-```
-
-## System Validation
+✅ SSH key generated: /Users/USERNAME/.ssh/github_nfc_TIMESTAMPstem Validation
 
 ### Zero-Knowledge Guarantees Verified
 - ✅ NFC tag UIDs never displayed or stored in plaintext
@@ -112,20 +108,20 @@ Successfully implemented and validated a complete zero-knowledge NFC authenticat
 
 ### USB Authentication Pack
 ```
-/Volumes/BLUESAM/real_ambient_auth/real_ambient_pack.json
-/Volumes/BLUESAM/real_ambient_auth/encrypted_ambient_1757461039.dat
+/Volumes/YOUR_USB_DRIVE/real_ambient_auth/real_ambient_pack.json
+/Volumes/YOUR_USB_DRIVE/real_ambient_auth/encrypted_ambient_1757461039.dat
 ```
 
 ### Documentation
 ```
-/Users/flowgirl/Documents/_MobileShield/NFC Security Builds/GitHub_Integration/NFC_GitHub_2FA_v2/Zero_Knowledge_NFC_Terminal_Guide/
+/path/to/your/project/NFC Security Builds/GitHub_Integration/NFC_GitHub_2FA_v2/Zero_Knowledge_NFC_Terminal_Guide/
 ```
 
 ## Quick Start Commands
 
 ### Create Authentication Pack
 ```bash
-cd /Users/flowgirl/Documents/_MobileShield/NFC\ Security\ Builds/GitHub_Integration/NFC_GitHub_2FA_v2
+cd /path/to/your/project/NFC\ Security\ Builds/GitHub_Integration/NFC_GitHub_2FA_v2
 source venv_nfc_github/bin/activate
 python3 real_ambient_zero_knowledge_auth.py
 # Choose option 1
@@ -133,7 +129,7 @@ python3 real_ambient_zero_knowledge_auth.py
 
 ### Authenticate
 ```bash
-cd /Users/flowgirl/Documents/_MobileShield/NFC\ Security\ Builds/GitHub_Integration/NFC_GitHub_2FA_v2
+cd /path/to/your/project/NFC\ Security\ Builds/GitHub_Integration/NFC_GitHub_2FA_v2
 source venv_nfc_github/bin/activate
 python3 real_ambient_zero_knowledge_auth.py
 # Choose option 2
@@ -144,7 +140,7 @@ python3 real_ambient_zero_knowledge_auth.py
 - ffmpeg for audio capture ✅
 - NESDR RTL-SDR dongle ✅
 - NFC reader (barcode scanner) ✅
-- USB drive at /Volumes/BLUESAM ✅
+- USB drive at /Volumes/YOUR_USB_DRIVE ✅
 
 ## Security Model Summary
 

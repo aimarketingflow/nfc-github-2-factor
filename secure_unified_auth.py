@@ -33,7 +33,7 @@ def find_usb_drive():
     
     logging.info("🔍 Starting USB drive detection...")
     
-    usb_paths = ["/Volumes/SILVER", "/Volumes/USB", "/Volumes/Untitled", "/Volumes/BLUESAM"]
+    usb_paths = ["/Volumes/SILVER", "/Volumes/USB", "/Volumes/Untitled", "/Volumes/YOUR_USB_DRIVE"]
     
     for path in usb_paths:
         logging.debug(f"🔍 Checking path: {path}")
@@ -414,7 +414,7 @@ echo "🎯 Key rotation complete!"
 echo "📋 Remember to update GitHub with new public key"
 '''
     
-    script_path = "/Users/flowgirl/Documents/_MobileShield/NFC Security Builds/GitHub_Integration/NFC_GitHub_2FA_v2/rotate_keys.sh"
+    script_path = "/path/to/your/project/NFC Security Builds/GitHub_Integration/NFC_GitHub_2FA_v2/rotate_keys.sh"
     
     with open(script_path, 'w') as f:
         f.write(script_content)

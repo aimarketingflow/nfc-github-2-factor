@@ -495,7 +495,7 @@ class NFCChaosGUI(QMainWindow):
                 <p>Transform Google Cloud credentials from digital assets (stealable) into physical assets (requiring NFC token possession).</p>
                 <h3>📋 Quick Access:</h3>
                 <ul>
-                <li><strong>GitHub Repository:</strong> https://github.com/aimarketingflow/nfc-gcloud-2-factor</li>
+                <li><strong>GitHub Repository:</strong> https://github.com/YOUR_GITHUB_USERNAME/nfc-gcloud-2-factor</li>
                 <li><strong>Documentation File:</strong> NFC_GCP_Authentication_Documentation.html</li>
                 <li><strong>Release Post:</strong> NFC_GCP_Authentication_Release_Post.md</li>
                 </ul>
@@ -525,7 +525,7 @@ class NFCChaosGUI(QMainWindow):
 ✅ Technical implementation with code examples
 
 🔗 ACCESS DOCUMENTATION:
-• GitHub: https://github.com/aimarketingflow/nfc-gcloud-2-factor
+• GitHub: https://github.com/YOUR_GITHUB_USERNAME/nfc-gcloud-2-factor
 • File: NFC_GCP_Authentication_Documentation.html
 • Release Post: NFC_GCP_Authentication_Release_Post.md
 
@@ -663,7 +663,7 @@ python3 nfc_gcp_authenticator.py
         <h3>1. Clone Repository</h3>
         <pre style="background: #374151; padding: 10px; border-radius: 5px;">
 # Clone the public repository
-git clone https://github.com/aimarketingflow/nfc-gcloud-2-factor.git
+git clone https://github.com/YOUR_GITHUB_USERNAME/nfc-gcloud-2-factor.git
 cd nfc-gcloud-2-factor
         </pre>
 
@@ -710,8 +710,8 @@ python3 test_deployment/test_complete_flow.py
 
         <h2>📚 Available Repositories</h2>
         <ul>
-            <li><a href="https://github.com/aimarketingflow/nfc-gcloud-2-factor" style="color: #60A5FA;">NFC Google Cloud Auth (Public)</a></li>
-            <li><a href="https://github.com/aimarketingflow/nfc-github-2-factor" style="color: #60A5FA;">NFC GitHub 2FA (Public)</a></li>
+            <li><a href="https://github.com/YOUR_GITHUB_USERNAME/nfc-gcloud-2-factor" style="color: #60A5FA;">NFC Google Cloud Auth (Public)</a></li>
+            <li><a href="https://github.com/YOUR_GITHUB_USERNAME/nfc-github-2-factor" style="color: #60A5FA;">NFC GitHub 2FA (Public)</a></li>
         </ul>
 
         <h2>🛠️ Development Workflow</h2>
@@ -735,7 +735,7 @@ git push origin main
     def open_github_docs(self):
         """Open GitHub documentation in browser"""
         import webbrowser
-        webbrowser.open("https://github.com/aimarketingflow/nfc-gcloud-2-factor")
+        webbrowser.open("https://github.com/YOUR_GITHUB_USERNAME/nfc-gcloud-2-factor")
         self.log_message("Opened GitHub documentation in browser")
 
     def create_settings_tab(self):

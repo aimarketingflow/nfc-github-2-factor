@@ -196,4 +196,4 @@ The Triple Airgap Architecture represents the theoretical maximum in authenticat
 
 **Implementation Status**: Production ready
 **Last Updated**: September 8, 2025
-**Repository**: [NFC GitHub 2FA v2](https://github.com/aimarketingflow/nfc-github-2-factor)
+**Repository**: [NFC GitHub 2FA v2](https://github.com/YOUR_GITHUB_USERNAME/nfc-github-2-factor)
