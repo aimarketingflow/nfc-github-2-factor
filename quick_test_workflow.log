@@ -1,0 +1,16 @@
+2025-09-09 15:31:28,655 - INFO - 🚀 Starting Quick Test Workflow application
+2025-09-09 15:31:28,655 - INFO - 🚀 Starting quick test workflow at 2025-09-09 15:31:28.655774
+2025-09-09 15:31:28,655 - INFO - 🔍 Testing USB drive detection...
+2025-09-09 15:31:28,656 - INFO - ✅ USB found: /Volumes/BLUESAM
+2025-09-09 15:31:28,656 - INFO - 📦 Testing authentication pack...
+2025-09-09 15:31:46,462 - INFO - ✅ Authentication pack found
+2025-09-09 15:31:46,463 - INFO - ✅ Authentication data folder found
+2025-09-09 15:31:53,909 - INFO - 📁 Auth folder contains 2 files:
+2025-09-09 15:31:53,911 - INFO -    - ambient_audio_1757456030.wav (0 bytes)
+2025-09-09 15:31:53,911 - INFO -    - ._ambient_audio_1757456030.wav (4096 bytes)
+2025-09-09 15:31:53,912 - INFO - 📱 Testing NFC scanner import...
+2025-09-09 15:31:53,937 - INFO - ✅ NFC scanner imported successfully
+2025-09-09 15:31:53,937 - INFO - 🔐 Testing cryptography imports...
+2025-09-09 15:31:53,937 - ERROR - ❌ Cryptography import failed: No module named 'cryptography'
+2025-09-09 15:31:53,937 - INFO - ⚠️ Some components need attention
+2025-09-09 15:31:53,937 - INFO - 🏁 Test workflow complete
