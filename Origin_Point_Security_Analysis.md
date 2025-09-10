@@ -18,7 +18,7 @@ Even if an attacker obtains ALL authentication factors:
 
 ```python
 origin_binding_requirements = {
-    'exact_file_location': '/Volumes/SILVER/MobileShield_Packs/pack_usb_1757376353/',
+    'exact_file_location': '/Volumes/SILVER/MobileShield_Packs/pack_usb_TIMESTAMP/',
     'original_usb_drive': 'Must be the same physical USB (fingerprint: 5a669d70b5feec92...)',
     'mount_point_verification': 'Must be mounted at original /Volumes/SILVER path',
     'file_integrity': 'Encrypted container bound to filesystem metadata',

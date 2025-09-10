@@ -44,7 +44,7 @@ class QuickTestWorkflow:
         logging.info("📦 Testing authentication pack...")
         
         pack_path = os.path.join(usb_path, "mobileshield_auth_pack.json")
-        auth_folder = os.path.join(usb_path, "mobileshield_auth_data")
+        auth_folder = os.path.join(usb_path, "nfc_auth_data")
         
         if os.path.exists(pack_path):
             logging.info("✅ Authentication pack found")

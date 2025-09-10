@@ -30,8 +30,8 @@ def test_ssh_key_alone():
     logging.info("🔍 Testing SSH key security without multi-factor authentication...")
     
     # Check if SSH key exists
-    private_key = "/Users/flowgirl/.ssh/unified_github_1757457706"
-    public_key = "/Users/flowgirl/.ssh/unified_github_1757457706.pub"
+    private_key = "/Users/USERNAME/.ssh/unified_github_TIMESTAMP"
+    public_key = "/Users/USERNAME/.ssh/unified_github_TIMESTAMP.pub"
     
     if not os.path.exists(private_key):
         print("❌ SSH key not found - run unified authentication first")

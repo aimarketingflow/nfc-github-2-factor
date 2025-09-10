@@ -19,9 +19,9 @@ workflow_phase_1 = {
 ```
 
 **Results**:
-- ✅ Pack created: `/Volumes/SILVER/MobileShield_Packs/pack_usb_1757374863/`
-- ✅ Audio: `usb_origin_audio_usb_1757374863_1757374863.wav`
-- ✅ Config: `usb_origin_pack_usb_1757374863.json`
+- ✅ Pack created: `/Volumes/SILVER/MobileShield_Packs/pack_usb_TIMESTAMP/`
+- ✅ Audio: `usb_origin_audio_usb_TIMESTAMP_TIMESTAMP.wav`
+- ✅ Config: `usb_origin_pack_usb_TIMESTAMP.json`
 - ✅ USB bound to fingerprint: `9520f8001170c505...`
 
 ### **Step 2: SSH Key Generation From Pack**
@@ -36,7 +36,7 @@ ssh_generation = {
 ```
 
 **Results**:
-- ✅ SSH wrapper: `/Users/flowgirl/.ssh/mobileshield_ssh_wrapper.sh`
+- ✅ SSH wrapper: `/Users/USERNAME/.ssh/mobileshield_ssh_wrapper.sh`
 - ✅ NFC scan = passkey input
 - ✅ Pack values = SSH private key material
 

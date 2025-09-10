@@ -102,14 +102,14 @@ Successfully implemented and validated a complete zero-knowledge NFC authenticat
 
 ### Generated SSH Keys
 ```
-~/.ssh/github_real_ambient_1757461202     # Private key (encrypted)
-~/.ssh/github_real_ambient_1757461202.pub # Public key
+~/.ssh/github_real_ambient_TIMESTAMP     # Private key (encrypted)
+~/.ssh/github_real_ambient_TIMESTAMP.pub # Public key
 ```
 
 ### USB Authentication Pack
 ```
 /Volumes/YOUR_USB_DRIVE/real_ambient_auth/real_ambient_pack.json
-/Volumes/YOUR_USB_DRIVE/real_ambient_auth/encrypted_ambient_1757461039.dat
+/Volumes/YOUR_USB_DRIVE/real_ambient_auth/encrypted_ambient_TIMESTAMP.dat
 ```
 
 ### Documentation

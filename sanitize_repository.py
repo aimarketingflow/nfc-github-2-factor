@@ -32,7 +32,7 @@ def sanitize_file(file_path):
             (r'github-nfc-auth', 'github-nfc-auth'),
             
             # Replace SSH key paths with generic ones
-            (r'/Users/flowgirl/\.ssh/github_[^"\'\\s]+', '/Users/USERNAME/.ssh/github_nfc_TIMESTAMP'),
+            (r'/Users/USERNAME/\.ssh/github_[^"\'\\s]+', '/Users/USERNAME/.ssh/github_nfc_TIMESTAMP'),
             
             # Replace specific NFC values in examples
             (r'YOUR_NFC_TAG_1', 'YOUR_NFC_TAG_1'),

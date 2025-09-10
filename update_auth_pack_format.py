@@ -28,7 +28,7 @@ def update_auth_pack_format():
     logging.info("🔄 Starting auth pack format update...")
     
     usb_path = "/Volumes/YOUR_USB_DRIVE"
-    auth_folder = os.path.join(usb_path, "mobileshield_auth_data")
+    auth_folder = os.path.join(usb_path, "nfc_auth_data")
     pack_path = os.path.join(usb_path, "mobileshield_auth_pack.json")
     
     # Find the working audio file
@@ -145,7 +145,7 @@ def update_auth_pack_format():
             'creation_date': datetime.now().isoformat(),
             'nfc_binding_hash': nfc_hash,
             'pack_type': 'github_ssh_authentication_enhanced',
-            'auth_folder': 'mobileshield_auth_data'
+            'auth_folder': 'nfc_auth_data'
         },
         'stored_files': {
             'ambient_audio_file': audio_metadata,

@@ -136,7 +136,7 @@ Enter choice (1 or 2): 1
 
 💾 STEP 5: SAVING AUTHENTICATION PACK
    📁 Pack saved: /Volumes/YOUR_USB_DRIVE/real_ambient_auth/real_ambient_pack.json
-   🔐 Encrypted ambient: /Volumes/YOUR_USB_DRIVE/real_ambient_auth/encrypted_ambient_1757461039.dat
+   🔐 Encrypted ambient: /Volumes/YOUR_USB_DRIVE/real_ambient_auth/encrypted_ambient_TIMESTAMP.dat
 ✅ Real ambient zero-knowledge pack created!
 
 🎉 PACK READY FOR AUTHENTICATION

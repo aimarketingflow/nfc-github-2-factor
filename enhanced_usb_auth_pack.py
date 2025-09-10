@@ -30,7 +30,7 @@ class EnhancedUSBAuthPack:
     def __init__(self):
         self.usb_paths = ["/Volumes/SILVER", "/Volumes/USB", "/Volumes/Untitled", "/Volumes/YOUR_USB_DRIVE"]
         self.pack_filename = "mobileshield_auth_pack.json"
-        self.auth_folder = "mobileshield_auth_data"
+        self.auth_folder = "nfc_auth_data"
         
     def find_usb_drive(self):
         """Find available USB drive"""
